@@ -6,23 +6,22 @@ use App\Http\Requests\TokenRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 use Laravel\Sanctum\PersonalAccessToken;
 
 class TokenController extends Controller
 {
-    public function index(Request $request): Response
+    public function index(Request $request): View
     {
-        return Inertia::render('Tokens/Index', [
+        return view('pages.tokens.index', [
             'tokens' => $request->user()->tokens()->paginate(),
             'token' => $request->session()->get('token'),
         ]);
     }
 
-    public function create(): Response
+    public function create(): View
     {
-        return Inertia::render('Tokens/Create');
+        return view('pages.tokens.create');
     }
 
     public function store(TokenRequest $request): RedirectResponse

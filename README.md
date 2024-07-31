@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/axeldotdev/ssk/blob/main/.github/header.png" alt="SSK UI Screenshot" />
+    <img src="https://github.com/axeldotdev/ssk-livewire/blob/main/.github/header.png" alt="SSK UI Screenshot" />
 </p>
 
 <p align="center">
@@ -9,11 +9,11 @@
     <a href="https://laravel.com">
         <img alt="Laravel v11.x" src="https://img.shields.io/badge/Laravel-v11.x-FF2D20?style=for-the-badge&logo=laravel">
     </a>
-    <a href="https://inertiajs.com/">
-        <img alt="Inertia v1.x" src="https://img.shields.io/badge/Inertia-v1.x-846CEE?style=for-the-badge">
+    <a href="https://livewire.laravel.com">
+        <img alt="Livewire v3.x" src="https://img.shields.io/badge/Livewire-v3.x-D9548C?style=for-the-badge">
     </a>
-    <a href="https://vuejs.org/">
-        <img alt="Vue v3.x" src="https://img.shields.io/badge/Vue-v3.x-42B883?style=for-the-badge">
+    <a href="https://alpinejs.dev">
+        <img alt="Alpine v3.x" src="https://img.shields.io/badge/Alpine-v3.x-77C1D2?style=for-the-badge">
     </a>
 </p>
 
@@ -23,12 +23,12 @@ The main goal of SSK is to help you (and me) build app quickly and it brings a t
 
 But my other goal is to use it as a storage for all the class, enums, traits, configs and other stuff that I use in every app I work on. And I hope it will be usefull for you too like a big Gist.
 
-If you would like a Livewire version, let's connect on Twitter. If a lot of people are interested I could make some time for it.
+You can also use the [Inertia version here](https://github.com/axeldotdev/ssk).
 
 ## Installation
 
 ```bash
-git clone XXX your-project-name
+git clone git@github.com:axeldotdev/ssk-livewire.git your-project-name
 cd your-project-name
 composer install
 cp .env.example .env
@@ -46,6 +46,8 @@ Horizon is installed and configure so you can switch your queues to redis very q
 **SSK** is just a wrapper around **Laravel Breeze** who is a wrapper around **Laravel**. You have all the power to modify it to suit your need.
 
 ## Available Features
+
+The front is in progress. I try to transform my Vue components and pages from the Inertia version. It may take a while before I can release v1.
 
 - 🧑‍💻 Login and registration with email, phone, Google or Microsoft
 - ✅ User verification via email or phone (depending on the sing up method)
@@ -129,9 +131,9 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Need Help?
 
-🐞 If you spot a bug, please [submit a detailed issue](https://github.com/axeldotdev/ssk/issues/new?assignees=&labels=bug&template=bug_report.md), and wait for assistance.
+🐞 If you spot a bug, please [submit a detailed issue](https://github.com/axeldotdev/ssk-livewire/issues/new?assignees=&labels=bug&template=bug_report.md), and wait for assistance.
 
-🤔 If you have a question or feature request, please [start a new discussion](https://github.com/axeldotdev/ssk/discussions/new). For quick help, ask questions in the appropriate channel.
+🤔 If you have a question or feature request, please [start a new discussion](https://github.com/axeldotdev/ssk-livewire/discussions/new). For quick help, ask questions in the appropriate channel.
 
 🔐 If you discover a vulnerability, please review [our security policy](../../security/policy).
 

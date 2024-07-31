@@ -4,13 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Enums\OnboardingStep;
 use App\Http\Controllers\Controller;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 
 class OnboardingController extends Controller
 {
-    public function show(OnboardingStep $onboardingStep): Response
+    public function show(OnboardingStep $onboardingStep): View
     {
-        return Inertia::render('Auth/Onboarding', compact('onboardingStep'));
+        return view('pages.auth.onboarding', compact('onboardingStep'));
     }
 }

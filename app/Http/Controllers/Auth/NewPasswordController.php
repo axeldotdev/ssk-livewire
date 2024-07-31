@@ -11,14 +11,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 
 class NewPasswordController extends Controller
 {
-    public function create(Request $request): Response
+    public function create(Request $request): View
     {
-        return Inertia::render('Auth/ResetPassword', [
+        return view('pages.auth.reset-password', [
             'email' => $request->email,
             'token' => $request->route('token'),
         ]);

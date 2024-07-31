@@ -19,21 +19,18 @@ use App\Http\Controllers\Auth\SkipOnboardingController;
 use App\Http\Controllers\Auth\VerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\VerifyPhoneController;
-use Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
 
-    Route::post('register', [RegisteredUserController::class, 'store'])
-        ->middleware([HandlePrecognitiveRequests::class]);
+    Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 
-    Route::post('login', [AuthenticatedSessionController::class, 'store'])
-        ->middleware([HandlePrecognitiveRequests::class]);
+    Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::get(
         'forgot-password',
@@ -43,8 +40,7 @@ Route::middleware('guest')->group(function () {
     Route::post(
         'forgot-password',
         [PasswordResetLinkController::class, 'store'],
-    )->name('password.email')
-        ->middleware([HandlePrecognitiveRequests::class]);
+    )->name('password.email');
 
     Route::get(
         'reset-password/{token}',
@@ -52,8 +48,7 @@ Route::middleware('guest')->group(function () {
     )->name('password.reset');
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
-        ->name('password.store')
-        ->middleware([HandlePrecognitiveRequests::class]);
+        ->name('password.store');
 
     Route::get('companies/{company}/invitations/{invitation}', [
         CompanyInvitationController::class,
@@ -63,8 +58,7 @@ Route::middleware('guest')->group(function () {
     Route::put('companies/{company}/invitations/{invitation}', [
         CompanyInvitationController::class,
         'update',
-    ])->name('companies.invitations.update')
-        ->middleware([HandlePrecognitiveRequests::class]);
+    ])->name('companies.invitations.update');
 });
 
 Route::post(
@@ -84,35 +78,27 @@ Route::middleware(['auth'])->group(function () {
     Route::post('verify-phone', VerifyPhoneController::class)
         // ->middleware(['signed', 'throttle:6,1'])
         ->middleware(['throttle:6,1'])
-        ->name('phone-verification.verify')
-        ->middleware([HandlePrecognitiveRequests::class]);
+        ->name('phone-verification.verify');
 
     Route::post(
         'email/verification-notification',
         [EmailVerificationNotificationController::class, 'store'],
-    )->middleware('throttle:6,1')->name('verification.send')
-        ->middleware([HandlePrecognitiveRequests::class]);
+    )->middleware('throttle:6,1')->name('verification.send');
 
     Route::post('onboarding/account', [
         AccountOnboardingController::class,
         'store',
-    ])
-        ->name('onboarding.account')
-        ->middleware([HandlePrecognitiveRequests::class]);
+    ])->name('onboarding.account');
 
     Route::post('onboarding/company', [
         CompanyOnboardingController::class,
         'store',
-    ])
-        ->name('onboarding.company')
-        ->middleware([HandlePrecognitiveRequests::class]);
+    ])->name('onboarding.company');
 
     Route::post('onboarding/collaborators', [
         CollaboratorsOnboardingController::class,
         'store',
-    ])
-        ->name('onboarding.collaborators')
-        ->middleware([HandlePrecognitiveRequests::class]);
+    ])->name('onboarding.collaborators');
 
     Route::get('onboarding/skip', [SkipOnboardingController::class, 'show'])
         ->name('onboarding.skip');
@@ -142,11 +128,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post(
         'confirm-password',
         [ConfirmablePasswordController::class, 'store'],
-    )->middleware([HandlePrecognitiveRequests::class]);
+    );
 
     Route::put('password', [PasswordController::class, 'update'])
-        ->name('password.update')
-        ->middleware([HandlePrecognitiveRequests::class]);
+        ->name('password.update');
 
     Route::post('logout', [
         AuthenticatedSessionController::class,

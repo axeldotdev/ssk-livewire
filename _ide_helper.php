@@ -5,7 +5,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 11.18.1.
+ * Generated for Laravel 11.19.0.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -18937,12 +18937,30 @@ namespace Livewire {
      * @see \Livewire\LivewireManager
      */        class Livewire {
                     /**
+         * {@inheritDoc}
+         *
+         * @static 
+         */        public static function mount($name, $params = [], $key = null)
+        {
+                        /** @var \Livewire\Volt\LivewireManager $instance */
+                        return $instance->mount($name, $params, $key);
+        }
+                    /**
+         * {@inheritDoc}
+         *
+         * @static 
+         */        public static function update($snapshot, $diff, $calls)
+        {
+                        /** @var \Livewire\Volt\LivewireManager $instance */
+                        return $instance->update($snapshot, $diff, $calls);
+        }
+                    /**
          * 
          *
          * @static 
          */        public static function setProvider($provider)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->setProvider($provider);
         }
                     /**
@@ -18950,8 +18968,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function provide($callback)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->provide($callback);
         }
                     /**
@@ -18959,8 +18977,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function component($name, $class = null)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->component($name, $class);
         }
                     /**
@@ -18968,8 +18986,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function componentHook($hook)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->componentHook($hook);
         }
                     /**
@@ -18977,8 +18995,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function propertySynthesizer($synth)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->propertySynthesizer($synth);
         }
                     /**
@@ -18986,8 +19004,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function directive($name, $callback)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->directive($name, $callback);
         }
                     /**
@@ -18995,8 +19013,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function precompiler($callback)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->precompiler($callback);
         }
                     /**
@@ -19004,8 +19022,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function new($name, $id = null)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->new($name, $id);
         }
                     /**
@@ -19013,8 +19031,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function isDiscoverable($componentNameOrClass)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->isDiscoverable($componentNameOrClass);
         }
                     /**
@@ -19022,26 +19040,17 @@ namespace Livewire {
          *
          * @static 
          */        public static function resolveMissingComponent($resolver)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->resolveMissingComponent($resolver);
         }
                     /**
          * 
          *
          * @static 
-         */        public static function mount($name, $params = [], $key = null)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->mount($name, $params, $key);
-        }
-                    /**
-         * 
-         *
-         * @static 
          */        public static function snapshot($component)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->snapshot($component);
         }
                     /**
@@ -19049,8 +19058,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function fromSnapshot($snapshot)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->fromSnapshot($snapshot);
         }
                     /**
@@ -19058,8 +19067,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function listen($eventName, $callback)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->listen($eventName, $callback);
         }
                     /**
@@ -19067,26 +19076,17 @@ namespace Livewire {
          *
          * @static 
          */        public static function current()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->current();
         }
                     /**
          * 
          *
          * @static 
-         */        public static function update($snapshot, $diff, $calls)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->update($snapshot, $diff, $calls);
-        }
-                    /**
-         * 
-         *
-         * @static 
          */        public static function updateProperty($component, $path, $value)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->updateProperty($component, $path, $value);
         }
                     /**
@@ -19094,8 +19094,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function isLivewireRequest()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->isLivewireRequest();
         }
                     /**
@@ -19103,8 +19103,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function componentHasBeenRendered()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->componentHasBeenRendered();
         }
                     /**
@@ -19112,8 +19112,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function forceAssetInjection()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->forceAssetInjection();
         }
                     /**
@@ -19121,8 +19121,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function setUpdateRoute($callback)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->setUpdateRoute($callback);
         }
                     /**
@@ -19130,8 +19130,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function getUpdateUri()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->getUpdateUri();
         }
                     /**
@@ -19139,8 +19139,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function setScriptRoute($callback)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->setScriptRoute($callback);
         }
                     /**
@@ -19148,8 +19148,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function useScriptTagAttributes($attributes)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->useScriptTagAttributes($attributes);
         }
                     /**
@@ -19157,8 +19157,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function withUrlParams($params)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->withUrlParams($params);
         }
                     /**
@@ -19166,8 +19166,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function withQueryParams($params)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->withQueryParams($params);
         }
                     /**
@@ -19175,8 +19175,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function withCookie($name, $value)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->withCookie($name, $value);
         }
                     /**
@@ -19184,8 +19184,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function withCookies($cookies)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->withCookies($cookies);
         }
                     /**
@@ -19193,8 +19193,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function withHeaders($headers)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->withHeaders($headers);
         }
                     /**
@@ -19202,8 +19202,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function withoutLazyLoading()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->withoutLazyLoading();
         }
                     /**
@@ -19211,8 +19211,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function test($name, $params = [])
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->test($name, $params);
         }
                     /**
@@ -19220,8 +19220,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function visit($name)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->visit($name);
         }
                     /**
@@ -19229,8 +19229,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function actingAs($user, $driver = null)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->actingAs($user, $driver);
         }
                     /**
@@ -19238,8 +19238,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function isRunningServerless()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->isRunningServerless();
         }
                     /**
@@ -19247,8 +19247,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function addPersistentMiddleware($middleware)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->addPersistentMiddleware($middleware);
         }
                     /**
@@ -19256,8 +19256,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function setPersistentMiddleware($middleware)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->setPersistentMiddleware($middleware);
         }
                     /**
@@ -19265,8 +19265,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function getPersistentMiddleware()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->getPersistentMiddleware();
         }
                     /**
@@ -19274,8 +19274,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function flushState()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->flushState();
         }
                     /**
@@ -19283,8 +19283,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function originalUrl()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->originalUrl();
         }
                     /**
@@ -19292,8 +19292,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function originalPath()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->originalPath();
         }
                     /**
@@ -19301,8 +19301,8 @@ namespace Livewire {
          *
          * @static 
          */        public static function originalMethod()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
+        {            //Method inherited from \Livewire\LivewireManager         
+                        /** @var \Livewire\Volt\LivewireManager $instance */
                         return $instance->originalMethod();
         }
             }
@@ -19744,6 +19744,26 @@ namespace Illuminate\Testing {
          */        public static function inertiaPage()
         {
                         return \Illuminate\Testing\TestResponse::inertiaPage();
+        }
+                    /**
+         * 
+         *
+         * @see \Livewire\Volt\VoltServiceProvider::registerTestingMacros()
+         * @param mixed $component
+         * @static 
+         */        public static function assertSeeVolt($component)
+        {
+                        return \Illuminate\Testing\TestResponse::assertSeeVolt($component);
+        }
+                    /**
+         * 
+         *
+         * @see \Livewire\Volt\VoltServiceProvider::registerTestingMacros()
+         * @param mixed $component
+         * @static 
+         */        public static function assertDontSeeVolt($component)
+        {
+                        return \Illuminate\Testing\TestResponse::assertDontSeeVolt($component);
         }
             }
     }
@@ -24720,7 +24740,7 @@ namespace  {
                             /**
              * Add a "where like" clause to the query.
              *
-             * @param string $column
+             * @param \Illuminate\Contracts\Database\Query\Expression|string $column
              * @param string $value
              * @param bool $caseSensitive
              * @param string $boolean
@@ -24735,7 +24755,7 @@ namespace  {
                             /**
              * Add an "or where like" clause to the query.
              *
-             * @param string $column
+             * @param \Illuminate\Contracts\Database\Query\Expression|string $column
              * @param string $value
              * @param bool $caseSensitive
              * @return \Illuminate\Database\Query\Builder 
@@ -24748,7 +24768,7 @@ namespace  {
                             /**
              * Add a "where not like" clause to the query.
              *
-             * @param string $column
+             * @param \Illuminate\Contracts\Database\Query\Expression|string $column
              * @param string $value
              * @param bool $caseSensitive
              * @param string $boolean
@@ -24762,7 +24782,7 @@ namespace  {
                             /**
              * Add an "or where not like" clause to the query.
              *
-             * @param string $columns
+             * @param \Illuminate\Contracts\Database\Query\Expression|string $column
              * @param string $value
              * @param bool $caseSensitive
              * @return \Illuminate\Database\Query\Builder 
@@ -25522,7 +25542,7 @@ namespace  {
                                 return $instance->orWhereAll($columns, $operator, $value);
             }
                             /**
-             * Add an "where" clause to the query for multiple columns with "or" conditions between them.
+             * Add a "where" clause to the query for multiple columns with "or" conditions between them.
              *
              * @param string[] $columns
              * @param string $operator
@@ -25547,6 +25567,33 @@ namespace  {
             {
                                 /** @var \Illuminate\Database\Query\Builder $instance */
                                 return $instance->orWhereAny($columns, $operator, $value);
+            }
+                            /**
+             * Add a "where not" clause to the query for multiple columns where none of the conditions should be true.
+             *
+             * @param string[] $columns
+             * @param string $operator
+             * @param mixed $value
+             * @param string $boolean
+             * @return \Illuminate\Database\Query\Builder 
+             * @static 
+             */            public static function whereNone($columns, $operator = null, $value = null, $boolean = 'and')
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->whereNone($columns, $operator, $value, $boolean);
+            }
+                            /**
+             * Add an "or where not" clause to the query for multiple columns where none of the conditions should be true.
+             *
+             * @param string[] $columns
+             * @param string $operator
+             * @param mixed $value
+             * @return \Illuminate\Database\Query\Builder 
+             * @static 
+             */            public static function orWhereNone($columns, $operator = null, $value = null)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->orWhereNone($columns, $operator, $value);
             }
                             /**
              * Add a "group by" clause to the query.

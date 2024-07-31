@@ -8,7 +8,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TermsOfServiceController;
 use App\Http\Controllers\TokenController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 Route::get('tools/health', HealthCheckResultsController::class)
@@ -26,7 +25,7 @@ Route::middleware([
     'assigned', 'localized',
 ])->group(function () {
     Route::get('dashboard', function () {
-        return Inertia::render('Dashboard');
+        return view('pages.dashboard');
     })->name('dashboard');
 
     Route::get('profile', [ProfileController::class, 'edit'])

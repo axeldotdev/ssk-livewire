@@ -10,15 +10,14 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 use Laravel\Pennant\Feature;
 
 class AuthenticatedSessionController extends Controller
 {
-    public function create(): Response
+    public function create(): View
     {
-        return Inertia::render('Auth/Login', [
+        return view('pages.auth.login', [
             'signViaEmail' => Feature::active(SignViaEmail::class),
             'signViaPhone' => Feature::active(SignViaPhone::class),
             'signViaSSO' => Feature::active(SignViaSSO::class),

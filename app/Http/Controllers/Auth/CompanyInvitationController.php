@@ -8,15 +8,15 @@ use App\Models\Company;
 use App\Models\CompanyInvitation;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
-use Inertia\Response;
+use Illuminate\View\View;
 
 class CompanyInvitationController extends Controller
 {
     public function show(
         Company $company,
         CompanyInvitation $invitation,
-    ): Response {
-        return inertia('Auth/CompanyInvitation', [
+    ): View {
+        return view('pages.auth.company-invitation', [
             'company' => $company,
             'invitation' => $invitation,
         ]);

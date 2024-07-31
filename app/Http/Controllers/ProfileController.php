@@ -10,14 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function edit(Request $request): Response
+    public function edit(Request $request): View
     {
-        return Inertia::render('Profile/Edit', [
+        return view('pages.profile.edit', [
             'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
             'status' => session('status'),
         ]);

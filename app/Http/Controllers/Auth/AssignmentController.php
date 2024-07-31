@@ -8,14 +8,13 @@ use App\Models\Company;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 
 class AssignmentController extends Controller
 {
-    public function show(Request $request): Response
+    public function show(Request $request): View
     {
-        return Inertia::render('Auth/Assignment', [
+        return view('pages.auth.assignment', [
             'companies' => $request->user()->allCompanies()
                 ->map->only('uuid', 'name'),
         ]);

@@ -2,6 +2,7 @@
 
 return [
     App\Providers\AppServiceProvider::class,
+    App\Providers\VoltServiceProvider::class,
     App\Providers\Filament\AdminPanelProvider::class,
     App\Providers\HealthServiceProvider::class,
     App\Providers\HorizonServiceProvider::class,

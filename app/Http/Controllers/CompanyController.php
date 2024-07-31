@@ -7,14 +7,13 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 
 class CompanyController extends Controller
 {
-    public function index(Request $request): Response
+    public function index(Request $request): View
     {
-        return Inertia::render('Companies/Index', [
+        return view('pages.companies.index', [
             'filters' => $request->only('name'),
             'companies' => Company::query()
                 ->select('uuid', 'name', 'user_id')
@@ -35,14 +34,14 @@ class CompanyController extends Controller
         ]);
     }
 
-    public function create(): Response
+    public function create(): View
     {
-        return Inertia::render('Companies/Create');
+        return view('pages.companies.create');
     }
 
-    public function show(Company $company): Response
+    public function show(Company $company): View
     {
-        return Inertia::render('Companies/Show', [
+        return view('pages.companies.show', [
             'company' => $company,
         ]);
     }

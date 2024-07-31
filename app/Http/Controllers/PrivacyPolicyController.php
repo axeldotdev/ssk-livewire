@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Support\TranslationManager;
 use Illuminate\Support\Str;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 
 class PrivacyPolicyController extends Controller
 {
-    public function show(): Response
+    public function show(): View
     {
         $policyFile = app(TranslationManager::class)
             ->currentLocale()
             ->markdownFile('policy.md');
 
-        return Inertia::render('PrivacyPolicy', [
+        return view('pages.privacy-policy', [
             'policy' => Str::markdown(file_get_contents($policyFile)),
         ]);
     }

@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Support\TranslationManager;
 use Illuminate\Support\Str;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 
 class TermsOfServiceController extends Controller
 {
-    public function show(): Response
+    public function show(): View
     {
         $termsFile = app(TranslationManager::class)
             ->currentLocale()
             ->markdownFile('terms.md');
 
-        return Inertia::render('TermsOfService', [
+        return view('pages.terms-of-service', [
             'terms' => Str::markdown(file_get_contents($termsFile)),
         ]);
     }
