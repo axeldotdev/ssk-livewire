@@ -12983,15 +12983,6 @@ namespace Illuminate\Support\Facades {
         {
                         return \Illuminate\Http\Request::hasValidRelativeSignatureWhileIgnoring($ignoreQuery);
         }
-                    /**
-         * 
-         *
-         * @see \Inertia\ServiceProvider::registerRequestMacro()
-         * @static 
-         */        public static function inertia()
-        {
-                        return \Illuminate\Http\Request::inertia();
-        }
             }
             /**
      * 
@@ -14170,18 +14161,6 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Routing\Router $instance */
                         return $instance->tap($callback);
-        }
-                    /**
-         * 
-         *
-         * @see \Inertia\ServiceProvider::registerRouterMacro()
-         * @param mixed $uri
-         * @param mixed $component
-         * @param mixed $props
-         * @static 
-         */        public static function inertia($uri, $component, $props = [])
-        {
-                        return \Illuminate\Routing\Router::inertia($uri, $component, $props);
         }
                     /**
          * 
@@ -19662,15 +19641,6 @@ namespace Illuminate\Http {
         {
                         return \Illuminate\Http\Request::hasValidRelativeSignatureWhileIgnoring($ignoreQuery);
         }
-                    /**
-         * 
-         *
-         * @see \Inertia\ServiceProvider::registerRequestMacro()
-         * @static 
-         */        public static function inertia()
-        {
-                        return \Illuminate\Http\Request::inertia();
-        }
             }
     }
 
@@ -19680,18 +19650,6 @@ namespace Illuminate\Routing {
      *
      * @mixin \Illuminate\Routing\RouteRegistrar
      */        class Router {
-                    /**
-         * 
-         *
-         * @see \Inertia\ServiceProvider::registerRouterMacro()
-         * @param mixed $uri
-         * @param mixed $component
-         * @param mixed $props
-         * @static 
-         */        public static function inertia($uri, $component, $props = [])
-        {
-                        return \Illuminate\Routing\Router::inertia($uri, $component, $props);
-        }
                     /**
          * 
          *
@@ -19716,54 +19674,6 @@ namespace Illuminate\Routing {
          */        public static function lazy($enabled = true)
         {
                         return \Illuminate\Routing\Route::lazy($enabled);
-        }
-            }
-    }
-
-namespace Illuminate\Testing {
-            /**
-     * 
-     *
-     * @mixin \Illuminate\Http\Response
-     */        class TestResponse {
-                    /**
-         * 
-         *
-         * @see \Inertia\Testing\TestResponseMacros::assertInertia()
-         * @param \Closure|null $callback
-         * @static 
-         */        public static function assertInertia($callback = null)
-        {
-                        return \Illuminate\Testing\TestResponse::assertInertia($callback);
-        }
-                    /**
-         * 
-         *
-         * @see \Inertia\Testing\TestResponseMacros::inertiaPage()
-         * @static 
-         */        public static function inertiaPage()
-        {
-                        return \Illuminate\Testing\TestResponse::inertiaPage();
-        }
-                    /**
-         * 
-         *
-         * @see \Livewire\Volt\VoltServiceProvider::registerTestingMacros()
-         * @param mixed $component
-         * @static 
-         */        public static function assertSeeVolt($component)
-        {
-                        return \Illuminate\Testing\TestResponse::assertSeeVolt($component);
-        }
-                    /**
-         * 
-         *
-         * @see \Livewire\Volt\VoltServiceProvider::registerTestingMacros()
-         * @param mixed $component
-         * @static 
-         */        public static function assertDontSeeVolt($component)
-        {
-                        return \Illuminate\Testing\TestResponse::assertDontSeeVolt($component);
         }
             }
     }
@@ -20572,6 +20482,64 @@ namespace Livewire\Features\SupportTesting {
          */        public static function assertFormFieldIsVisible($fieldName, $formName = 'form')
         {
                         return \Livewire\Features\SupportTesting\Testable::assertFormFieldIsVisible($fieldName, $formName);
+        }
+                    /**
+         * 
+         *
+         * @see \Filament\Forms\Testing\TestsForms::assertWizardStepExists()
+         * @param int $step
+         * @param string $formName
+         * @return static 
+         * @static 
+         */        public static function assertWizardStepExists($step, $formName = 'form')
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertWizardStepExists($step, $formName);
+        }
+                    /**
+         * 
+         *
+         * @see \Filament\Forms\Testing\TestsForms::assertWizardCurrentStep()
+         * @param int $step
+         * @param string $formName
+         * @return static 
+         * @static 
+         */        public static function assertWizardCurrentStep($step, $formName = 'form')
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertWizardCurrentStep($step, $formName);
+        }
+                    /**
+         * 
+         *
+         * @see \Filament\Forms\Testing\TestsForms::goToWizardStep()
+         * @param int $step
+         * @param string $formName
+         * @return static 
+         * @static 
+         */        public static function goToWizardStep($step, $formName = 'form')
+        {
+                        return \Livewire\Features\SupportTesting\Testable::goToWizardStep($step, $formName);
+        }
+                    /**
+         * 
+         *
+         * @see \Filament\Forms\Testing\TestsForms::goToNextWizardStep()
+         * @param string $formName
+         * @return static 
+         * @static 
+         */        public static function goToNextWizardStep($formName = 'form')
+        {
+                        return \Livewire\Features\SupportTesting\Testable::goToNextWizardStep($formName);
+        }
+                    /**
+         * 
+         *
+         * @see \Filament\Forms\Testing\TestsForms::goToPreviousWizardStep()
+         * @param string $formName
+         * @return static 
+         * @static 
+         */        public static function goToPreviousWizardStep($formName = 'form')
+        {
+                        return \Livewire\Features\SupportTesting\Testable::goToPreviousWizardStep($formName);
         }
                     /**
          * 
@@ -22471,6 +22439,35 @@ namespace Illuminate\View {
          */        public static function response($callback)
         {
                         return \Illuminate\View\View::response($callback);
+        }
+            }
+    }
+
+namespace Illuminate\Testing {
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Http\Response
+     */        class TestResponse {
+                    /**
+         * 
+         *
+         * @see \Livewire\Volt\VoltServiceProvider::registerTestingMacros()
+         * @param mixed $component
+         * @static 
+         */        public static function assertSeeVolt($component)
+        {
+                        return \Illuminate\Testing\TestResponse::assertSeeVolt($component);
+        }
+                    /**
+         * 
+         *
+         * @see \Livewire\Volt\VoltServiceProvider::registerTestingMacros()
+         * @param mixed $component
+         * @static 
+         */        public static function assertDontSeeVolt($component)
+        {
+                        return \Illuminate\Testing\TestResponse::assertDontSeeVolt($component);
         }
             }
     }
